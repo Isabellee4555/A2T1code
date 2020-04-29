@@ -13,6 +13,8 @@
  FLUSH PRIVILEGES; # at mysql grant permissions to awkologist so that we can use the database. 
 
  mysql -u awkologist -p world_x<world_x.sql  # exit mysql, import database to mysql world_x
+ 
+ mysql -u awkologist -p world_x -e "show tables;"  #show tables
 
 
 #b
