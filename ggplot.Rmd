@@ -1,0 +1,38 @@
+---
+title: "Q3"
+output: html_document
+---
+
+
+
+```{r}
+death <- data.frame(x=c(7.39,3.86, 0.33,0.3 ), v1=(c("Germany","Norway","Australia","Japan" )))
+```
+
+```{r}
+
+ggplot(data=death, aes(x=x ,y=reorder(v1,sort(x,decreasing = TRUE))))+
+  geom_col(color="steelblue", fill="steelblue",width = 0.3,)+
+  labs(title="Covid-19 deaths per 100,000 population", subtitle = "Selected countries, to April 27th 2020", caption = "Johns Hopkins University,CSSE;PHE/NHS")+
+  
+  theme_bw()+
+  theme(panel.grid.major.x=element_line("grey"),
+        panel.grid.major.y = element_blank(),
+        panel.grid.minor.x= element_blank(),
+        axis.ticks = element_blank(),
+        panel.border =element_blank(),
+        axis.text.x = element_text(size = 10, colour = "grey30"),
+        axis.text.y = element_text(size = 10, colour = "grey30",hjust = 0),
+        plot.caption = element_text(hjust = 0, colour = "grey"),
+        plot.title = element_text(size = 15,face = "bold"),
+        plot.subtitle = element_text(size=13, colour = "grey30")
+        ) +
+  coord_cartesian(xlim = c(0, 8))+
+  scale_x_continuous(position = "top",name=NULL)+
+  scale_y_discrete(name=NULL,)
+
+
+```
+
+
++theme_bw()
