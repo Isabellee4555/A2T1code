@@ -4,7 +4,7 @@
 
 #a
 
- awk -F '\t' '$2>1000' expression.tab
+ awk -F '\t' '$2<1000' expression.tab
 
 #b
 
