@@ -35,4 +35,4 @@ ggplot(data=death, aes(x=x ,y=reorder(v1,sort(x,decreasing = TRUE))))+
 ```
 
 
-+theme_bw()
+
