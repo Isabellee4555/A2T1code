@@ -1,0 +1,21 @@
+#!/bin/bash
+
+
+#a 
+ tar -xvf world_x-db.tar.gz  # unzip the file 
+
+ sudo mysql -u root -p   # login mysql as a superuser
+
+ create database world_x;  # at mysql  create a database called world_x
+
+ GRANT ALL PRIVILEGES ON world_x.* TO 'awkologist'@'localhost' WITH GRANT OPTION;
+
+ FLUSH PRIVILEGES; # at mysql grant permissions to awkologist so that we can use the database. 
+
+ mysql -u awkologist -p world_x<world_x.sql  # exit mysql, import database to mysql world_x
+
+
+#b
+mysql -u awkologist -p world_x -e "select n.Name, l.Percentage, i.Name from country n, city i, countrylanguage l where n.Capital = i.ID and n.Code = l.CountryCode and l.Percentage>50 and l.Language='English';"
+
+

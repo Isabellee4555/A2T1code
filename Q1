@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+
+#a
+
+ awk -F '\t' '$2>1000' expression.tab
+
+#b
+
+awk -F '\t' '$2~/ase/{print $0}' annotation.tab
+
+
+#c
+
+ awk -F '\t' '$3~/(Purine|Pyrimidine) biosynthesis/{print $0}' annotation.tab
+
+
